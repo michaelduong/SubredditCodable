@@ -1,43 +1,40 @@
 //
 //  Post.swift
-//  SubRedditCodable
+//  Subreddit
 //
-//  Created by Aaron Martinez on 12/11/17.
-//  Copyright © 2017 Aaron Martinez. All rights reserved.
+//  Created by Michael Duong on 2/1/18.
+//  Copyright © 2018 Turnt Labs. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct JSONDictionary: Decodable {
-    
     let data: DataDictionary
     
     struct DataDictionary: Decodable {
-        
         let children: [PostDictionary]
         
         struct PostDictionary: Decodable {
+            let post: Post
             
-            enum CodingKeys: String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case post = "data"
             }
-            
-            let post: Post
         }
     }
 }
 
 struct Post: Decodable {
+    let title: String
+    let thumbnailEndpoint: String
+    let numberOfUpvotes: Int
+    let numberOfComments: Int
     
-    enum CodingKeys: String, CodingKey {
+    
+    private enum CodingKeys: String, CodingKey {
         case title
         case thumbnailEndpoint = "thumbnail"
         case numberOfUpvotes = "ups"
         case numberOfComments = "num_comments"
     }
-    
-    let title: String
-    let thumbnailEndpoint: String
-    let numberOfUpvotes: Int
-    let numberOfComments: Int
 }

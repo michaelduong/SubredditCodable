@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  SubRedditCodable
+//  Subreddit
 //
-//  Created by Aaron Martinez on 12/11/17.
-//  Copyright © 2017 Aaron Martinez. All rights reserved.
+//  Created by Michael Duong on 2/1/18.
+//  Copyright © 2018 Turnt Labs. All rights reserved.
 //
 
 import UIKit
